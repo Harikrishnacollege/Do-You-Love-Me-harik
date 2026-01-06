@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
+/* Reset */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* Page background */
 body {
   height: 100vh;
   font-family: 'Poppins', sans-serif;
@@ -19,48 +21,56 @@ body {
 
 /* Glass card */
 .container {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.55);
   padding: 40px 60px;
   border-radius: 20px;
   text-align: center;
   color: white;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 /* Title bounce */
 h1 {
   margin-bottom: 30px;
+  font-size: 32px;
   animation: bounce 1.5s infinite;
 }
 
+/* Bounce animation */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
 
+/* Button area (movement boundary) */
 .buttons {
   position: relative;
-  height: 120px;
+  width: 100%;
+  height: 150px;
+  margin-top: 20px;
 }
 
-/* Shared button styles */
+/* Common button styles */
 input[type="button"] {
   padding: 15px 40px;
   font-size: 18px;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  color: white;
+  user-select: none;
 }
 
-/* YES button pulse */
+/* YES button */
 #yes-button {
   background: linear-gradient(135deg, #ff4d6d, #ff758f);
-  color: white;
   margin-right: 20px;
   animation: pulse 1.2s infinite;
+  transition: transform 0.3s ease;
 }
 
+/* Pulse animation */
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.1); }
@@ -70,6 +80,15 @@ input[type="button"] {
 /* NO button */
 #no-button {
   background: #4CAF50;
-  color: white;
   position: absolute;
+  transition: left 0.25s ease, top 0.25s ease, transform 0.2s ease;
+}
+
+/* Shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
 }
