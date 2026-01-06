@@ -1,17 +1,16 @@
-
-
-//click yes btn
 function clickYesButton() {
-    alert('I love you too ponna <3');
+    alert("I love you too ponna 💖🥰");
 }
 
-//move button on hover
 function hoverNoButton() {
-    // random from 0 to 1, then multiply with screen size
-    let x = Math.random() * window.innerWidth;
-    let y = Math.random() * window.innerHeight;
+    const btn = document.getElementById("no-button");
 
-    document.getElementById('no-button').style.left = x + 'px';
-    document.getElementById('no-button').style.top = y +'px';
-    
+    const maxX = window.innerWidth - btn.offsetWidth;
+    const maxY = window.innerHeight - btn.offsetHeight;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
 }
